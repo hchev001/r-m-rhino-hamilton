@@ -4,7 +4,7 @@ import axios from "axios";
  * Create an Axios Client with defaults
  */
 const client = axios.create({
-  baseUrl: "https://rickandmortyapi.com/api",
+  baseURL: "https://rickandmortyapi.com/api",
 });
 
 /**
