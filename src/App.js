@@ -1,27 +1,14 @@
-import logo from "./logo.svg";
 import "./App.css";
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
-import { PostDummyData } from "./modules/dummy/actions";
-function App() {
-  const dispatch = useDispatch();
-  const dummy = useSelector((state) => state.fake);
+import { Route, Switch } from "react-router-dom";
+import { IndexRoutes } from "./routes";
 
-  useEffect(() => {
-    console.log(dummy);
-  });
+function App() {
   return (
-    <div>
-      <header>
-        <h3>{dummy.name}</h3>
-        <h3>{dummy.age}</h3>
-      </header>
-      <button
-        onClick={() => dispatch(PostDummyData({ name: "Vidya", age: 11 }))}
-      >
-        Click me
-      </button>
-    </div>
+    <Switch>
+      {IndexRoutes.map((prop, key) => {
+        return <Route path={prop.path} key={key} component={prop.component} />;
+      })}
+    </Switch>
   );
 }
 

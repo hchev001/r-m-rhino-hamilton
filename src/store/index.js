@@ -1,7 +1,6 @@
 // import { createStore, compose, applyMiddleware } from "redux";
 // import logger from "redux-logger";
 // import thunk from "redux-thunk";
-import CreateRootReducer from "../modules";
 
 // function configureStoreDev(initialState) {
 //   const middlewares = [
