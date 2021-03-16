@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
-
+import logo from "./logo.svg";
+import "./App.css";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { PostDummyData } from "./modules/dummy/actions";
 function App() {
+  const dispatch = useDispatch();
+  const dummy = useSelector((state) => state.fake);
+
+  useEffect(() => {
+    console.log(dummy);
+  });
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div>
+      <header>
+        <h3>{dummy.name}</h3>
+        <h3>{dummy.age}</h3>
       </header>
+      <button
+        onClick={() => dispatch(PostDummyData({ name: "Vidya", age: 11 }))}
+      >
+        Click me
+      </button>
     </div>
   );
 }
