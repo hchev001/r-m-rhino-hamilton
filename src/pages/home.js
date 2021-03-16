@@ -13,23 +13,25 @@ export const HomePage = (props) => {
     <>
       <FullLayout>
         <div className="grid md:grid-cols-12 ">
-          <div className="md:col-span-2 h-full bg-black bg-opacity-90">
+          <div className="md:col-span-2 h-full bg-black bg-opacity-75">
             <nav>
-              <header className="text-mustard">Rick & Morty Fan Site</header>
-              <ul className="bg-black bg-opacity-90 h-full">
-                <li>
+              <header className="text-mustard text-xl bg-greese bg-opacity-75 py-6 flex justify-center justify-items-center">
+                Rick & Morty Fan Site
+              </header>
+              <ul className="mt-8 px-4 h-full text-center">
+                <li className="mb-12">
                   <a href="#">
-                    <span className="text-white">Episodes</span>
+                    <span className="text-white text-xl">Episodes</span>
+                  </a>
+                </li>
+                <li className="mb-12">
+                  <a href="#">
+                    <span className="text-white text-xl">Characters</span>
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <span className="text-white">Characters</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <span className="text-white">Favorites</span>
+                    <span className="text-white text-xl">Favorites</span>
                   </a>
                 </li>
               </ul>
