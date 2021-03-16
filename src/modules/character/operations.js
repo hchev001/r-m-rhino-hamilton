@@ -8,3 +8,42 @@
  * the action creator function. If the operation uses a thunk, it can dispatch many actions and
  * chain them with promises.
  */
+
+import { FetchCharactersFromAPI, FetchCharactersFromPage } from "./utils";
+import { GetCharactersAction } from "./actions";
+
+export const FetchTVCharacters = (page_number) => {
+  return (dispatch) => {
+    return FetchCharactersFromAPI(page_number)
+      .then((res) => {
+        console.log(res);
+        const { info, results } = res;
+        dispatch(
+          GetCharactersAction(
+            info.next,
+            info.pages,
+            info.count,
+            info.prev,
+            results
+          )
+        );
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+};
+
+export const FetchNextTVCharacters = (next_page_url) => {
+  return (dispatch) => {
+    return FetchCharactersFromPage(next_page_url)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+};
+
+export default { FetchTVCharacters, FetchNextTVCharacters };
