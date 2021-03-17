@@ -5,6 +5,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { useDispatch, useSelector } from "react-redux";
 import { FetchTVCharacterByURL } from "../modules/character/operations";
 import { ClearCharacterListAction } from "../modules/character/actions";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -19,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
 
 export const EpisodeCard = ({ ep }) => {
   const classes = useStyles();
+  const history = useHistory();
   const [openModal, setOpenModal] = useState(false);
   const dispatch = useDispatch();
   const CharacterList = useSelector((state) => state.characters.character_list);
@@ -31,6 +33,14 @@ export const EpisodeCard = ({ ep }) => {
   const handleCloseModal = () => {
     setOpenModal(false);
     dispatch(ClearCharacterListAction());
+  };
+
+  const handleCharacterClick = (character) => {
+    // set character as current character of its reducer
+
+    handleCloseModal();
+    // navigate to character page
+    history.push(`/characters/${character.id}`);
   };
   return (
     <div className="overflow-hidden lg:w-48 flex flex-col items-center relative">
@@ -60,6 +70,7 @@ export const EpisodeCard = ({ ep }) => {
                 <div
                   key={character.id}
                   className="flex justify-between px-2 hover:bg-mustard"
+                  onClick={() => handleCharacterClick(character)}
                 >
                   <img
                     src={character.image}

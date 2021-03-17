@@ -6,6 +6,7 @@ import { FullLayout } from "../layouts/full-layout";
 import Modal from "@material-ui/core/Modal";
 import { makeStyles } from "@material-ui/core/styles";
 import { EpisodeCard } from "../components/EpisodeCard";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -34,23 +35,23 @@ export const HomePage = (props) => {
               <ul className="mt-8 px-4 h-full text-center">
                 <li className="mb-12 w-full">
                   <div className="hover:bg-mustard rounded flex justify-center text-white hover:text-gray-300">
-                    <a href="#" className="my-2">
+                    <Link to="/episodes" className="my-2">
                       <span className="text-xl">Episodes</span>
-                    </a>
+                    </Link>
                   </div>
                 </li>
                 <li className="mb-12 w-full">
                   <div className="hover:bg-mustard rounded flex justify-center text-white hover:text-gray-300">
-                    <a href="#" className="my-2">
+                    <Link to="/characters" className="my-2">
                       <span className="text-white text-xl">Characters</span>
-                    </a>
+                    </Link>
                   </div>
                 </li>
                 <li className="mb-12 w-full">
                   <div className="hover:bg-mustard rounded flex justify-center text-white hover:text-gray-300">
-                    <a href="#">
+                    <Link to="/favorites">
                       <span className="text-white text-xl">Favorites</span>
-                    </a>
+                    </Link>
                   </div>
                 </li>
               </ul>
