@@ -8,6 +8,8 @@ import { Nav } from "../components/Nav";
 export const HomePage = (props) => {
   const dispatch = useDispatch();
   const Episodes = useSelector((state) => state.episodes.episode_list);
+
+  // on page render fetch the episodes
   useEffect(() => {
     dispatch(FetchEpisodes());
   }, []);

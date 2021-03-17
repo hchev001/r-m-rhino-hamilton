@@ -4,7 +4,9 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { FetchTVCharacters } from "../modules/character/operations";
 import { CharacterCard } from "../components/CharacterCard";
+
 export const CharacterPage = (props) => {
+  // dispatch and useSelector allow me to access and manipulate the global store
   const dispatch = useDispatch();
   const Characters = useSelector((state) => state.characters.character_list);
   useEffect(() => {
