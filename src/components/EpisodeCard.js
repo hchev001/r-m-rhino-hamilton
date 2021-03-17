@@ -53,10 +53,15 @@ export const EpisodeCard = ({ ep }) => {
         className="y-40"
       >
         <div className="bg-black bg-opacity-90 m-16 p-12 text-white">
-          <div className="">
-            <div className="text-2xl">Episode Name: {ep.name}</div>
-            <div className="text-2xl">Air Date: {ep.air_date}</div>
-            <div className="text-2xl">Show Index: {ep.episode}</div>
+          <div className="flex justify-between">
+            <div>
+              <div className="text-2xl">Episode Name: {ep.name}</div>
+              <div className="text-2xl">Air Date: {ep.air_date}</div>
+              <div className="text-2xl">Show Index: {ep.episode}</div>
+            </div>
+            <span className="cursor-pointer text-2xl hover:text-red">
+              Favorite
+            </span>
           </div>
           <div className="mt-4">
             {CharacterList.length > 0 &&

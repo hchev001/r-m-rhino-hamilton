@@ -3,7 +3,10 @@ export const FullLayout = (props) => {
   return (
     <div
       className="bg-fixed bg-black bg-opacity-80 h-full"
-      style={{ backgroundImage: `url(${background})` }}
+      style={{
+        backgroundImage: `url(${background})`,
+        backgroundRepeat: "repeat",
+      }}
     >
       {props.children}
     </div>
