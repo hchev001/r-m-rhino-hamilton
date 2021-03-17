@@ -1,70 +1,24 @@
-# Getting Started with Create React App
+# Red Rhino Technical Assessment
+Objective of this technical assessment is to develop a Frontend Application that consumes a RESTful API of the Rick & Morty show.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Setup
+Install NodeJS on your system, this project was developed using NodeJS version 14.0.0. Thus using the latest LTS of NodeJS 14.X.Y should work. Else see alternate link to download version 14.0.0
 
-## Available Scripts
+[NodeJS LTS](https://nodejs.org/dist/v14.0.0/)
 
-In the project directory, you can run:
+[NodeJS 14.0.0](https://nodejs.org/dist/v14.0.0/)
 
-### `yarn start`
+Unless downloading the code directly via HTTPS, your system will also need Git in order to clone the project.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Assuming you are working from the terminal, 
+clone my project in the directory of personal preference.
 
-### `yarn test`
+`git clone https://github.com/hchev001/r-m-rhino-hamilton.git`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Open the directory of the cloned project and install the project dependencies by running.
 
-### `yarn build`
+`npm install`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Once all the dependencies have been installed, you can start the project locally by entering `npm start` from the command line.
