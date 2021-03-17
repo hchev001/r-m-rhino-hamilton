@@ -64,12 +64,12 @@ export const EpisodeCard = ({ ep }) => {
             <div className="text-2xl">Air Date: {ep.air_date}</div>
             <div className="text-2xl">Show Index: {ep.episode}</div>
           </div>
-          <div className=" overflow-hidden overflow-y-scroll">
+          <div className=" overflow-y-scroll">
             {CharacterList.length > 0 &&
               CharacterList.map((character) => (
                 <div
                   key={character.id}
-                  className="flex justify-between px-2 hover:bg-mustard"
+                  className="flex justify-between px-2 hover:bg-mustard mb-4 border-2"
                   onClick={() => handleCharacterClick(character)}
                 >
                   <img
