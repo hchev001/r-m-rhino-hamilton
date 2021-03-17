@@ -15,7 +15,7 @@ export const HomePage = (props) => {
   return (
     <>
       <FullLayout>
-        <div className="grid md:grid-cols-12 ">
+        <div className="grid md:grid-cols-12 h-full">
           <div className="md:col-span-2 h-full bg-black bg-opacity-75">
             <Nav />
           </div>

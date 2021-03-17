@@ -4,7 +4,7 @@ import { FavoritePage } from "../pages/favorite";
 import { HomePage } from "../pages/home";
 
 export const IndexRoutes = [
-  { path: "/episodes", name: "Episode", component: EpisodePage },
+  { path: "/episodes", name: "Episode", component: HomePage },
   { path: "/characters", name: "Character", component: CharacterPage },
   { path: "/favorites", name: "Favorites", component: FavoritePage },
   { path: "/", name: "Home", component: HomePage },

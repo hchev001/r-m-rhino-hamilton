@@ -18,8 +18,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+/**
+ * Represents one of the cards on the Episode Home Page
+ *
+ * Toggles a modal on click that lists more information about episode and displays all the characters in the show
+ * @param {*} param0
+ * @returns
+ */
 export const EpisodeCard = ({ ep }) => {
-  const classes = useStyles();
   const history = useHistory();
   const [openModal, setOpenModal] = useState(false);
   const dispatch = useDispatch();
@@ -58,18 +64,18 @@ export const EpisodeCard = ({ ep }) => {
         onClose={() => handleCloseModal()}
         className="y-40"
       >
-        <div className="bg-white m-16 p-12">
+        <div className="bg-black bg-opacity-90 m-16 p-12 text-white">
           <div className="">
             <div className="text-2xl">Episode Name: {ep.name}</div>
             <div className="text-2xl">Air Date: {ep.air_date}</div>
             <div className="text-2xl">Show Index: {ep.episode}</div>
           </div>
-          <div className=" overflow-y-scroll">
+          <div className="mt-4">
             {CharacterList.length > 0 &&
               CharacterList.map((character) => (
                 <div
                   key={character.id}
-                  className="flex justify-between px-2 hover:bg-mustard mb-4 border-2"
+                  className="flex justify-between px-2 hover:bg-mustard mb-4 border-2 cursor-pointer"
                   onClick={() => handleCharacterClick(character)}
                 >
                   <img
