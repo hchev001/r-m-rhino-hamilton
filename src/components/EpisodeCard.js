@@ -9,8 +9,11 @@ import { ClearCharacterListAction } from "../modules/character/actions";
 const useStyles = makeStyles((theme) => ({
   paper: {
     position: "absolute",
-    top: "50%",
-    left: "50%",
+    margin: "auto",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
   },
 }));
 
@@ -40,18 +43,29 @@ export const EpisodeCard = ({ ep }) => {
       <div className="mt-8">
         <span className="text-white text-xl">{ep.name}</span>
       </div>
-      <Modal open={openModal} onClose={() => handleCloseModal()}>
-        <div className={`bg-white `}>
-          <div>
-            <div>Episode Name: {ep.name}</div>
-            <div>Air Date: {ep.air_date}</div>
-            <div>Show Index: {ep.episode}</div>
+      <Modal
+        open={openModal}
+        onClose={() => handleCloseModal()}
+        className="y-40"
+      >
+        <div className="bg-white m-16 p-12">
+          <div className="">
+            <div className="text-2xl">Episode Name: {ep.name}</div>
+            <div className="text-2xl">Air Date: {ep.air_date}</div>
+            <div className="text-2xl">Show Index: {ep.episode}</div>
           </div>
-          <div>
+          <div className=" overflow-hidden overflow-y-scroll">
             {CharacterList.length > 0 &&
               CharacterList.map((character) => (
-                <div key={character.id}>
-                  <img src={character.image} alt={character.name} />
+                <div
+                  key={character.id}
+                  className="flex justify-between px-2 hover:bg-mustard"
+                >
+                  <img
+                    src={character.image}
+                    alt={character.name}
+                    className="w-12"
+                  />
                   <div>{character.name}</div>
                 </div>
               ))}
