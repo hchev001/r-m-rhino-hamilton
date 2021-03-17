@@ -1,7 +1,9 @@
 /* eslint-disable default-case */
 import {
+  CLEAR_CHARACTERS,
   FETCH_A_CHARACTER,
   FETCH_CHARACTERS,
+  FETCH_CHARACTERS_FROM_URL,
   FETCH_MORE_CHARACTERS,
 } from "./types";
 import produce from "immer";
@@ -50,6 +52,14 @@ const CharacterReducer = produce((draft, action) => {
       draft.currentCharacter.species = action.payload.species;
       draft.currentCharacter.type = action.payload.type;
       draft.currentCharacter.id = action.payload.id;
+      break;
+    case FETCH_CHARACTERS_FROM_URL:
+      draft.character_list = action.payload.character_list;
+      draft.count = action.payload.count;
+      break;
+    case CLEAR_CHARACTERS:
+      draft.character_list = [];
+      draft.count = -1;
       break;
   }
 }, initialState);

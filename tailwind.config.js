@@ -14,6 +14,7 @@ module.exports = {
       indigo: colors.indigo,
       red: colors.rose,
       yellow: colors.amber,
+      greese: "#535353A3",
     },
     extend: {},
   },

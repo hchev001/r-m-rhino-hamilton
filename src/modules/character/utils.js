@@ -30,3 +30,11 @@ export const FetchCharactersFromPage = (next_page) => {
  */
 export const FetchCharacterById = (id) =>
   request({ method: "get", url: `/character/${id}` });
+
+/**
+ * If provided a url for a specific character, then fetch it
+ * @param {String} url
+ * @returns Promise
+ */
+export const FetchCharacterByUrl = (url) =>
+  request({ method: "get", url: url });

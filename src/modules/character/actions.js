@@ -4,7 +4,12 @@
  * All actions are represented by functions, even if they are not parametrized.
  *
  */
-import { FETCH_CHARACTERS, FETCH_MORE_CHARACTERS } from "../character/types";
+import {
+  CLEAR_CHARACTERS,
+  FETCH_CHARACTERS,
+  FETCH_CHARACTERS_FROM_URL,
+  FETCH_MORE_CHARACTERS,
+} from "../character/types";
 
 export const GetCharactersAction = (
   next_page_url,
@@ -28,4 +33,20 @@ export const GetMoreCharacters = (page_number) => ({
   payload: {
     page_number: page_number,
   },
+});
+
+export const FetchTVCharacterByURLAction = (list) => ({
+  type: FETCH_CHARACTERS_FROM_URL,
+  payload: {
+    character_list: list.map((c) => ({
+      id: c.id,
+      image: c.image,
+      name: c.name,
+    })),
+    count: list.length,
+  },
+});
+
+export const ClearCharacterListAction = () => ({
+  type: CLEAR_CHARACTERS,
 });

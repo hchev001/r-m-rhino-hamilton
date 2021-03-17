@@ -9,8 +9,12 @@
  * chain them with promises.
  */
 
-import { FetchCharactersFromAPI, FetchCharactersFromPage } from "./utils";
-import { GetCharactersAction } from "./actions";
+import {
+  FetchCharacterByUrl,
+  FetchCharactersFromAPI,
+  FetchCharactersFromPage,
+} from "./utils";
+import { FetchTVCharacterByURLAction, GetCharactersAction } from "./actions";
 
 export const FetchTVCharacters = (page_number) => {
   return (dispatch) => {
@@ -42,6 +46,22 @@ export const FetchNextTVCharacters = (next_page_url) => {
       })
       .catch((error) => {
         console.log(error);
+      });
+  };
+};
+
+export const FetchTVCharacterByURL = (characterList) => {
+  return (dispatch) => {
+    const promisedCharacters = characterList.map((url) =>
+      FetchCharacterByUrl(url)
+    );
+    return Promise.all(promisedCharacters)
+      .then((listOfCharacters) => {
+        console.log("result of promise all", listOfCharacters);
+        dispatch(FetchTVCharacterByURLAction(listOfCharacters));
+      })
+      .catch((err) => {
+        console.log("one of the promised characters failed to fetch", err);
       });
   };
 };

@@ -9,3 +9,8 @@ export const FETCH_CHARACTERS = "r-m-characters/fetch-characters";
 export const FETCH_MORE_CHARACTERS = "r-m-characters/fetch-next-characters";
 
 export const FETCH_A_CHARACTER = "r-m-characters/fetch-a-character";
+
+export const FETCH_CHARACTERS_FROM_URL =
+  "r-m-characters/fetch-characters-from-url";
+
+export const CLEAR_CHARACTERS = "r-m-characters/clear-character-list";
