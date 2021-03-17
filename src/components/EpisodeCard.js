@@ -1,22 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { ReturnRandomCover } from "../utils/art/random-covers";
 import Modal from "@material-ui/core/Modal";
-import { makeStyles } from "@material-ui/core/styles";
 import { useDispatch, useSelector } from "react-redux";
 import { FetchTVCharacterByURL } from "../modules/character/operations";
 import { ClearCharacterListAction } from "../modules/character/actions";
 import { useHistory } from "react-router-dom";
-
-const useStyles = makeStyles((theme) => ({
-  paper: {
-    position: "absolute",
-    margin: "auto",
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-  },
-}));
 
 /**
  * Represents one of the cards on the Episode Home Page
